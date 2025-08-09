@@ -298,18 +298,20 @@ nav {
     border-radius: 2px;
 }
 
-/* About Section */
+/* About Section - Fixed Layout */
 .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .about-text {
     color: var(--text-light);
     font-size: 1.1rem;
     line-height: 1.8;
+    text-align: center;
 }
 
 .about-text p {
@@ -317,9 +319,10 @@ nav {
 }
 
 .experience-education {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    margin-top: 2rem;
 }
 
 .experience-item, .education-item {
@@ -704,6 +707,13 @@ nav {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .experience-education {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
@@ -737,6 +747,10 @@ nav {
     }
     
     .about-content {
+        gap: 2rem;
+    }
+    
+    .experience-education {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
