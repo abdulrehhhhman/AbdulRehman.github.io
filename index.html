@@ -70,7 +70,7 @@
                 <div class="about-text">
                     <p>I'm a dedicated Machine Learning Engineer with extensive experience in building intelligent systems that make a real-world impact. Currently working as an ML Intern at the National Center of Artificial Intelligence (NCAI), I specialize in deep learning architectures, computer vision applications, and natural language processing solutions.</p>
                     
-                    <p>My journey in AI spans across multiple domains - from developing sentiment analysis systems using LSTM networks to creating computer vision applications for fitness tracking and safety monitoring. I'm passionate about leveraging cutting-edge technologies like Transformers, YOLO, and Generative AI to solve complex problems.</p>
+                    <p>My journey in AI spans across multiple domains - from developing gesture-controlled interfaces using computer vision to creating intelligent fitness tracking applications and safety monitoring systems. I'm passionate about leveraging cutting-edge technologies like Transformers, YOLO, and Generative AI to solve complex problems.</p>
                     
                     <p>With hands-on experience in TensorFlow, PyTorch, and modern ML frameworks, I focus on building scalable, production-ready solutions that bridge the gap between research and practical applications.</p>
                 </div>
@@ -218,25 +218,43 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-hand-paper"></i>
                         </div>
-                        <h3>Advanced Sentiment Analysis System</h3>
+                        <h3>Gesture-Controlled YouTube Player</h3>
                     </div>
                     <div class="project-content">
-                        <p>Sophisticated sentiment analysis system leveraging LSTM and GRU networks for accurate emotion detection in text data. Features comprehensive preprocessing pipelines, word embeddings, and sequential modeling techniques.</p>
+                        <p>Real-time gesture-controlled YouTube player using computer vision. Control YouTube playback with hand gestures via webcam - no clicks, no remotes, just vision. Features touchless interface with native keyboard simulation for seamless media control.</p>
+                        
+                        <!-- Video Demo Placeholder -->
+                        <div class="project-video">
+                            <video controls width="100%" style="border-radius: 10px; margin: 1rem 0;">
+                                <source src="videos/gesture-youtube-demo.mp4" type="video/mp4">
+                                <!-- Replace 'videos/gesture-youtube-demo.mp4' with your actual video path -->
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
+                        <div class="gesture-controls">
+                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Gesture Controls:</h4>
+                            <div class="gestures-grid">
+                                <span class="gesture-item">✋ Open Palm → Play</span>
+                                <span class="gesture-item">☝️ One Finger → Pause</span>
+                                <span class="gesture-item">🖐️ Four Fingers → Next Video</span>
+                                <span class="gesture-item">✌️ Two Fingers → Volume Up</span>
+                                <span class="gesture-item">👌 Three Fingers → Volume Down</span>
+                            </div>
+                        </div>
+                        
                         <div class="tech-stack">
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Keras</span>
-                            <span class="tech-tag">LSTM/GRU</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Gesture Recognition</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/abdulrehhhhman/SentimentAnalysis" class="project-link" target="_blank">
+                            <a href="https://lnkd.in/eJZ9VqSW" class="project-link" target="_blank">
                                 <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://sentimentanalysis-kvjqbttmfo4ojv7pvmmyr4.streamlit.app/" class="project-link" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         </div>
                     </div>
@@ -278,6 +296,16 @@
                     </div>
                     <div class="project-content">
                         <p>Computer vision system for real-time fitness tracking using YOLOv8 pose estimation. Features intelligent joint angle analysis, state-based repetition counting, and multi-angle camera support with interactive visualization.</p>
+                        
+                        <!-- Video Demo Placeholder -->
+                        <div class="project-video">
+                            <video controls width="100%" style="border-radius: 10px; margin: 1rem 0;">
+                                <source src="videos/fitness-tracker-demo.mp4" type="video/mp4">
+                                <!-- Replace 'videos/fitness-tracker-demo.mp4' with your actual video path -->
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        
                         <div class="tech-stack">
                             <span class="tech-tag">YOLOv8</span>
                             <span class="tech-tag">OpenCV</span>
@@ -434,4 +462,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
