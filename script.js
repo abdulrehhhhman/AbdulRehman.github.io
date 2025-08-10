@@ -137,13 +137,23 @@ function initializeVideoControls() {
             });
         });
         
-        // Add loading animation
+        // Add loading states
         video.addEventListener('loadstart', () => {
             video.style.opacity = '0.7';
         });
         
         video.addEventListener('canplay', () => {
             video.style.opacity = '1';
+        });
+        
+        // Handle video load errors
+        video.addEventListener('error', () => {
+            console.log('Video failed to load:', video.src);
+            const fallback = video.nextElementSibling;
+            if (fallback && fallback.classList.contains('video-fallback')) {
+                video.style.display = 'none';
+                fallback.style.display = 'flex';
+            }
         });
     });
 }
@@ -188,7 +198,7 @@ function typeWriterEffect(element, text, speed = 100) {
     type();
 }
 
-// Card tilt effect
+// Subtle card tilt effect (much reduced)
 function initializeCardTilt() {
     const cards = document.querySelectorAll('.project-card, .certificate-card, .skill-card');
     
@@ -201,10 +211,11 @@ function initializeCardTilt() {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
+            // Much more subtle tilt effect
+            const rotateX = (y - centerY) / 30; // Reduced from /10 to /30
+            const rotateY = (centerX - x) / 30; // Reduced from /10 to /30
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(5px)`;
         });
         
         card.addEventListener('mouseleave', () => {
@@ -219,26 +230,11 @@ function initializeSkillTagEffects() {
     
     skillTags.forEach(tag => {
         tag.addEventListener('mouseenter', () => {
-            tag.style.transform = 'scale(1.1) rotate(2deg)';
+            tag.style.transform = 'scale(1.05) rotate(1deg)'; // Reduced rotation
         });
         
         tag.addEventListener('mouseleave', () => {
             tag.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
-}
-
-// Gesture items hover effects
-function initializeGestureEffects() {
-    const gestureItems = document.querySelectorAll('.gesture-item');
-    
-    gestureItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-2px) scale(1.02)';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0px) scale(1)';
         });
     });
 }
@@ -252,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeCardTilt();
         initializeSkillTagEffects();
         initializeVideoControls();
-        initializeGestureEffects();
         
         // Typing effect for subtitle (delayed to allow for hero animation)
         const subtitle = document.querySelector('.subtitle');
@@ -279,11 +274,12 @@ window.addEventListener('resize', () => {
 
 // Preload images for better performance
 function preloadImages() {
-    const images = ['your-photo.jpg']; // Add more images if needed
+    const images = ['./images/mypic.jpeg', './images/video-placeholder.jpg'];
     
     images.forEach(src => {
         const img = new Image();
         img.src = src;
+        img.onerror = () => console.log('Failed to load image:', src);
     });
 }
 
