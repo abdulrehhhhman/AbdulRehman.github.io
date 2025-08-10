@@ -123,6 +123,31 @@ function createFloatingParticles() {
     }
 }
 
+// Video play/pause functionality for project demos
+function initializeVideoControls() {
+    const videos = document.querySelectorAll('.project-video video');
+    
+    videos.forEach(video => {
+        // Pause other videos when one starts playing
+        video.addEventListener('play', () => {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video) {
+                    otherVideo.pause();
+                }
+            });
+        });
+        
+        // Add loading animation
+        video.addEventListener('loadstart', () => {
+            video.style.opacity = '0.7';
+        });
+        
+        video.addEventListener('canplay', () => {
+            video.style.opacity = '1';
+        });
+    });
+}
+
 // Floating animation keyframes
 const style = document.createElement('style');
 style.textContent = `
@@ -203,6 +228,21 @@ function initializeSkillTagEffects() {
     });
 }
 
+// Gesture items hover effects
+function initializeGestureEffects() {
+    const gestureItems = document.querySelectorAll('.gesture-item');
+    
+    gestureItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-2px) scale(1.02)';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'translateY(0px) scale(1)';
+        });
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all animations and effects
@@ -211,6 +251,8 @@ document.addEventListener('DOMContentLoaded', function() {
         createFloatingParticles();
         initializeCardTilt();
         initializeSkillTagEffects();
+        initializeVideoControls();
+        initializeGestureEffects();
         
         // Typing effect for subtitle (delayed to allow for hero animation)
         const subtitle = document.querySelector('.subtitle');
