@@ -37,8 +37,7 @@
             <div class="hero-content">
                 <div class="profile-section">
                     <div class="profile-image-container">
-                        <!-- Replace 'your-photo.jpg' with your actual photo file -->
-                        <img src="images/mypic.jpeg" alt="Abdul Rehman" class="profile-image">
+                        <img src="./images/mypic.jpeg" alt="Abdul Rehman" class="profile-image">
                     </div>
                     <h1>Abdul Rehman</h1>
                     <p class="subtitle">Machine Learning Engineer & AI Innovator</p>
@@ -225,24 +224,15 @@
                     <div class="project-content">
                         <p>Real-time gesture-controlled YouTube player using computer vision. Control YouTube playback with hand gestures via webcam - no clicks, no remotes, just vision. Features touchless interface with native keyboard simulation for seamless media control.</p>
                         
-                        <!-- Video Demo Placeholder -->
+                        <!-- Video Demo -->
                         <div class="project-video">
-                            <video controls width="100%" style="border-radius: 10px; margin: 1rem 0;">
-                                <source src="images/WhatsApp Video 2025-08-05 at 6.33.08 PM.mp4" type="video/mp4">
-                                <!-- Replace 'videos/gesture-youtube-demo.mp4' with your actual video path -->
-                                Your browser does not support the video tag.
+                            <video controls width="100%" poster="./images/video-placeholder.jpg">
+                                <source src="./images/WhatsApp Video 2025-08-05 at 6.33.08 PM.mp4" type="video/mp4">
+                                <div class="video-fallback">
+                                    <i class="fas fa-play-circle"></i>
+                                    <p>Video demo not available</p>
+                                </div>
                             </video>
-                        </div>
-                        
-                        <div class="gesture-controls">
-                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Gesture Controls:</h4>
-                            <div class="gestures-grid">
-                                <span class="gesture-item">✋ Open Palm → Play</span>
-                                <span class="gesture-item">☝️ One Finger → Pause</span>
-                                <span class="gesture-item">🖐️ Four Fingers → Next Video</span>
-                                <span class="gesture-item">✌️ Two Fingers → Volume Up</span>
-                                <span class="gesture-item">👌 Three Fingers → Volume Down</span>
-                            </div>
                         </div>
                         
                         <div class="tech-stack">
@@ -297,12 +287,14 @@
                     <div class="project-content">
                         <p>Computer vision system for real-time fitness tracking using YOLOv8 pose estimation. Features intelligent joint angle analysis, state-based repetition counting, and multi-angle camera support with interactive visualization.</p>
                         
-                        <!-- Video Demo Placeholder -->
+                        <!-- Video Demo -->
                         <div class="project-video">
-                            <video controls width="100%" style="border-radius: 10px; margin: 1rem 0;">
-                                <source src="images/pushup counter.mp4" type="video/mp4">
-                                <!-- Replace 'videos/fitness-tracker-demo.mp4' with your actual video path -->
-                                Your browser does not support the video tag.
+                            <video controls width="100%" poster="./images/video-placeholder.jpg">
+                                <source src="./images/pushup counter.mp4" type="video/mp4">
+                                <div class="video-fallback">
+                                    <i class="fas fa-play-circle"></i>
+                                    <p>Video demo not available</p>
+                                </div>
                             </video>
                         </div>
                         
@@ -462,4 +454,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
