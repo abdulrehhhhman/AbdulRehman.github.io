@@ -507,6 +507,65 @@ nav {
     margin-bottom: 1.5rem;
 }
 
+/* Project Video Styling */
+.project-video {
+    margin: 1.5rem 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.project-video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Gesture Controls Styling */
+.gesture-controls {
+    background: rgba(6, 182, 212, 0.05);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.gesture-controls h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.gestures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+}
+
+.gesture-item {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.gesture-item:hover {
+    background: rgba(6, 182, 212, 0.1);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -777,6 +836,10 @@ nav {
     
     .section {
         padding: 3rem 0;
+    }
+    
+    .gestures-grid {
+        grid-template-columns: 1fr;
     }
 }
 
